@@ -1,0 +1,49 @@
+---
+const projects = await Astro.glob("../../content/projects/*.{md,mdx}");
+---
+
+<section id="projects">
+  <div id="project-grid">
+    {
+      projects.map((post) => (
+        <>
+          <div class="project">
+            <!-- Project Left Space -->
+            <div class="project-left project-space">LEFT</div>
+
+            <!-- Project Center Space -->
+            <div class="project-center project-space">
+              <!-- Gallery -->
+              <div class="swiper" style="max-width: 100%;">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <img
+                      src={post.frontmatter.heroImage}
+                      style="width: 400px;"
+                    />
+                  </div>
+                  <div
+                    class="swiper-slide"
+                    style={{ background: post.frontmatter.project_color }}
+                  >
+                    {post.frontmatter.body}
+                  </div>
+                  <div class="swiper-slide">Slide 3</div>
+                </div>
+              </div>
+
+              <!-- Project Text -->
+              <div class="project-text">
+                <h3>{post.frontmatter.title}</h3>
+                <p>{post.frontmatter.tags}</p>
+              </div>
+            </div>
+
+            <!-- Project Right Space -->
+            <div class="project-right project-space">LEFT</div>
+          </div>
+        </>
+      ))
+    }
+  </div>
+</section>

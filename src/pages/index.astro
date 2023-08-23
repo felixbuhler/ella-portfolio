@@ -1,0 +1,31 @@
+---
+import Intro from "../components/Intro.astro";
+import Footer from "../components/Footer.astro";
+import Footer_Scripts from "../components/Footer_Scripts.astro";
+import Projects from "../components/Projects.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Gabriela Lukenda</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="https://use.typekit.net/ifm1ibg.css" />
+
+    <link rel="stylesheet" href="/styles/global.css" data-skrollr-stylesheet />
+  </head>
+  <body id="skrollr-body">
+    <!--<section id="start"><Intro client:load /></section> -->
+
+    <Intro />
+    <Projects />
+    <Footer />
+    <Footer_Scripts />
+  </body>
+</html>
