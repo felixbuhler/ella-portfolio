@@ -14,7 +14,7 @@ export default defineConfig({
   },
   media: {
     tina: {
-      mediaRoot: "",
+      mediaRoot: "media",
       publicFolder: "public",
     },
   },
@@ -53,6 +53,11 @@ export default defineConfig({
               colors: ['#EC4815', '#241748', '#B4F4E0', '#E6FAF8'],
               widget: 'sketch',
             }
+          },
+          {
+            label: "Year",
+            name: "year",
+            type: "number",
           },
           {
             label: 'Tags',

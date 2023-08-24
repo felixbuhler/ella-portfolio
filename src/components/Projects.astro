@@ -9,7 +9,7 @@ const projects = await Astro.glob("../../content/projects/*.{md,mdx}");
         <>
           <div class="project">
             <!-- Project Left Space -->
-            <div class="project-left project-space">LEFT</div>
+            <div class="project-left project-space"></div>
 
             <!-- Project Center Space -->
             <div class="project-center project-space">
@@ -23,24 +23,38 @@ const projects = await Astro.glob("../../content/projects/*.{md,mdx}");
                     />
                   </div>
                   <div
-                    class="swiper-slide"
+                    class="swiper-slide project-long-text"
                     style={{ background: post.frontmatter.project_color }}
                   >
                     {post.frontmatter.body}
                   </div>
                   <div class="swiper-slide">Slide 3</div>
                 </div>
+
+                <!-- If we need pagination -->
+  <div class="swiper-pagination"></div>
+
+  <!-- If we need navigation buttons -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
               </div>
 
               <!-- Project Text -->
               <div class="project-text">
+                <div class="project-title">
                 <h3>{post.frontmatter.title}</h3>
-                <p>{post.frontmatter.tags}</p>
+                <div class="year">{post.frontmatter.year}</div>
+              </div>
+                <p>
+                  
+                  {post.frontmatter.tags.map((tag) => (
+    <div class="tag">{tag}</div>
+  ))}</p>
               </div>
             </div>
 
             <!-- Project Right Space -->
-            <div class="project-right project-space">LEFT</div>
+            <div class="project-right project-space"></div>
           </div>
         </>
       ))

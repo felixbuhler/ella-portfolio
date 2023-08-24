@@ -9,12 +9,27 @@
 // Skrollr
 var s = skrollr.init();
 
+var s = skrollr.init();
+if (s.isMobile()) {
+    s.destroy();
+}
+
 // Projects
 const swiperCards = new Swiper(".swiper", {
     effect: "cards",
+    loop: true,
     cardsEffect: {
         perSlideOffset: 3,
         rotate: false,
+    },
+    pagination: {
+        el: ".swiper-pagination",
+    },
+
+    // Navigation arrows
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
     },
 });
 </script>
